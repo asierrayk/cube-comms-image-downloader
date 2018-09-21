@@ -86,28 +86,53 @@ edges_templates = {
 
 
 edges_rotation = {
-    'BD': 'x-22y30',
-    'DB': 'x-22y30',
-    'BL': 'x-22y30',
-    'LB': 'x-22y30',
-    'BR': 'x-90y30x30',
-    'RB': 'x-90y30x30',
-    'BU': 'x-140',
-    'UB': 'x-130',
-    'DL': 'y-30x45',
-    'LD': 'y-30x45',
-    'DR': 'x45y30',
-    'RD': 'x45y30',
-    'FL': 'x22y30',
-    'LF': 'x22y30',
-    'FR': 'x-22y30',
-    'RF': 'x-22y30',
-    'FU': 'x-50',
-    'UF': 'x-50',
-    'LU': 'x-22y-30',
-    'UL': 'x-22y-30',
-    'RU': 'x-22y30',
-    'UR': 'x-22y-30'
+    'BD': 'x-45y-120',
+    'DB': 'x-45y-120',
+    'BL': 'z30x-120',
+    'LB': 'z30x-120',
+    'BR': 'z-30x-120',
+    'RB': 'z-30x-120',
+    'BU': 'x-125',
+    'UB': 'x-120',
+    'DL': 'y-30x30',
+    'LD': 'y-45x30',
+    'DR': 'y30x30',
+    'RD': 'y45x30',
+    'FL': 'y-30x-30',
+    'LF': 'y-60x-30',
+    'FR': 'y30x-30',
+    'RF': 'y60x-30',
+    'FU': 'x-30',
+    'UF': 'x-45',
+    'LU': 'y-60x-30',
+    'UL': 'y-30x-30',
+    'RU': 'y60x-30',
+    'UR': 'y30x-30'
+}
+
+edges_arrows = {
+    'BD': 'B4B7',
+    'DB': 'D4D7',
+    'BL': 'B4B5',
+    'LB': 'L4L3',
+    'BR': 'B4B3',
+    'RB': 'R4R5',
+    'BU': 'B4B1',
+    'UB': 'U4U1',
+    'DL': 'D4D3',
+    'LD': 'L4L7',
+    'DR': 'D4D5',
+    'RD': 'R4R7',
+    'FL': 'L4L5',
+    'LF': 'L4L5',
+    'FR': 'F4F5',
+    'RF': 'R4R3',
+    'FU': 'F4F1',
+    'UF': 'U4U7',
+    'LU': 'L4L1',
+    'UL': 'U4U3',
+    'RU': 'R4R1',
+    'UR': 'U4U5'
 }
 
 pieces = {
@@ -132,7 +157,8 @@ pieces = {
     'UB': 'ub',
     'UF': 'uf',
     'UL': 'ul',
-    'UR': 'ur'
+    'UR': 'ur',
+    'DF': 'df'
 }
 
 for first, template in edges_templates.items():
@@ -144,6 +170,11 @@ for first, template in edges_templates.items():
 
         r = edges_rotation[first]
         params.update({'r': r})
+
+        arw = edges_arrows[first]
+        params.update({'arw': arw + '-s7'})
+
+        params.update({'ac': 'purple'})
 
         path = 'images/{}_{}_comm.'.format(first, second) + fmt
         download_image(path, params)
