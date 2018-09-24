@@ -123,7 +123,7 @@ edges_arrows = {
     'LD': 'L4L7',
     'DR': 'D4D5',
     'RD': 'R4R7',
-    'FL': 'F4F5',
+    'FL': 'F4F3',
     'LF': 'L4L5',
     'FR': 'F4F5',
     'RF': 'R4R3',
